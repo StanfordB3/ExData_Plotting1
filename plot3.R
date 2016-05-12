@@ -41,4 +41,4 @@ lines(hPwr2$Date_Time, hPwr2$Sub_metering_3, col="blue")
 ## Paint the legend
 legend("topright", lty = c(1, 1, 1), col = c("gray", "blue", "red"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-dev.off()
+# dev.off()

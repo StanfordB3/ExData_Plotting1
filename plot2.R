@@ -37,4 +37,4 @@ par(mfcol = c(1,1), mfrow= c(1, 1), cxy = .8 )
 plot(hPwr2$Date_Time, hPwr2$Global_active_power, type = "n", xlab = "", ylab = "Global Active Power (kilowatts)")
 lines(hPwr2$Date_Time, hPwr2$Global_active_power)
 
-dev.off()
+# dev.off()

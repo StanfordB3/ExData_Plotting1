@@ -49,4 +49,4 @@ lines(hPwr2$Date_Time, hPwr2$Voltage,xlab = "datetime")
 plot(hPwr2$Date_Time, hPwr2$Global_reactive_power, type = "n", xlab = "datetime")
 lines(hPwr2$Date_Time, hPwr2$Global_reactive_power, xlab = "datetime")
 
-dev.off()
+# dev.off()

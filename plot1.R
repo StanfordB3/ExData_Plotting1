@@ -35,4 +35,4 @@ GlobalActive <- as.numeric(as.character(hPwr2$Global_active_power))
 par(mar = c(4, 4, 2, 2), mfrow = c(1, 1), mfcol = c(1,1), cex.lab = 1, cex.sub = 4)
 hist(GlobalActive, col = "red", xlab = "Global Active Power (kilowatts)", main =  "Global Active Power")
 
-dev.off()
+# dev.off()
