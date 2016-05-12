@@ -18,7 +18,8 @@ library(stringr)
 
 ### ReadFile "household_power_consumption.txt" 
 currentFile <- "./household_power_consumption.txt"
-hPower <- read.csv(currentFile, header = TRUE, sep = ";")
+# hPower <- read.csv(currentFile, header = TRUE, sep = ";")
+data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 
 ### Translate charactere "Date" and "Time" column in to R interpretable dates
 hPwr <- mutate(hPower, dmy_hms(paste(Date, Time)))
@@ -28,7 +29,7 @@ hPwr2 <- filter(hPwr, Date == "1/2/2007" | Date == "2/2/2007")
 
 
 # Open "png" device to write the charts to plot4.png
-#   png(filename = "plot4.png", width = 480, height = 480, units = "px")
+png(filename = "plot4.png", width = 480, height = 480, units = "px")
 
 par(mfcol = c(2, 2), mar = c(4, 4, 2, 2), cex.lab = 1, mai =c(0.8, 0.7, 0.2, 0.2), oma = c(0.1, 0., 0.05, 0.05), cex.axis = .7)
 
@@ -42,11 +43,11 @@ lines(hPwr2$Date_Time, hPwr2$Sub_metering_3, col="blue")
 
 legend("top", lty = c(1, 1, 1), col = c("gray", "blue", "red"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), box.lty=0)
 
-# par(cex.lab = 1.5)
+par(cex.lab = 1.5)
 plot(hPwr2$Date_Time, hPwr2$Voltage, type = "n", xlab = "datetime", ylab = "Voltage")
 lines(hPwr2$Date_Time, hPwr2$Voltage,xlab = "datetime")
 
 plot(hPwr2$Date_Time, hPwr2$Global_reactive_power, type = "n", xlab = "datetime")
 lines(hPwr2$Date_Time, hPwr2$Global_reactive_power, xlab = "datetime")
 
-# dev.off()
+dev.off()
